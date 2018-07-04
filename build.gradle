@@ -1,7 +1,14 @@
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'jacoco'
 
 sourceCompatibility = 1.7
+
+jacoco {
+    toolVersion = "0.7.7.201606060606" //jacoco version
+    reportsDir = file("$buildDir/reports/jacoco") //default directory where jacoco generates test reports
+}
+
 version = '1.0'
 jar {
     manifest {
@@ -27,7 +34,12 @@ dependencies {
 }
 
 test {
-    systemProperties 'property': 'value'
+ignoreFailures = true
+    useTestNG() {
+useDefaultListeners = true
+suites 'src/main/resources/AllTest.xml'
+
+}
 }
 
 uploadArchives {
