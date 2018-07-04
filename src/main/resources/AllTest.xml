@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="classes" thread-count="1">
+<suite name="Suite" parallel="classes" thread-count="1" configfailurepolicy="continue">
 <test name="TEST" group-by-instances="true">
 	<packages>
 		<package name="com.insta.tests"></package>
