@@ -1,5 +1,6 @@
 package com.insta.reporter;
 
+import java.io.File;
 import java.lang.reflect.Method;
 
 import org.testng.ITestContext;
@@ -25,7 +26,7 @@ public class ExtentTestNGReportBuilder {
 
 	@BeforeSuite
 	public void beforeSuite() {
-		extent = ExtentManager.createInstance("extent.html");
+		extent = ExtentManager.createInstance(System.getProperty("user.dir") + File.separator + "extent.html");
 		ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter("extent.html");
 		extent.attachReporter(htmlReporter);
 		extent.setSystemInfo("HostName", "Instaqa_WIN_System");
