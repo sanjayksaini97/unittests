@@ -9,6 +9,12 @@ jacoco {
     reportsDir = file("$buildDir/reports/jacoco") //default directory where jacoco generates test reports
 }
 
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
+
 version = '1.0'
 jar {
     manifest {
